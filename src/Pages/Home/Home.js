@@ -1,9 +1,9 @@
 import React from 'react';
 
 const Home = () => {
-    return(
-        <div className="common-page">
-            <h1>Home Page</h1>
+    return (
+        <div class="container-fluid">
+            <h1>Home page</h1>
         </div>
     )
 }

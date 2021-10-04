@@ -13,14 +13,16 @@ const Posts = () => {
 	console.log("Posts", posts);
 
 	return (
-		<div className="post-home common-page">
-			<h1>Posts</h1>
-			<div className="flex-grid">
+		<div className="container overflow-hidden">
+			<h1 className="display-4">Posts</h1>
+			<div className="row gy-4">
 				{posts && posts.map((post, index) => {
 					return (
-						<div className="col" key={index}>
-							<div className="title">{post?.title}</div>
-							<div className="content">{post?.body}</div>
+						<div className="col-4" key={index}>
+							<div className="p-3 border bg-light">
+								<div className="title">{post?.title}</div>
+								<div className="content">{post?.body}</div>
+							</div>
 						</div>
 					)
 				})}

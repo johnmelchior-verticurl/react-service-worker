@@ -6,32 +6,29 @@ import {
 	NavLink
 } from "react-router-dom";
 import Posts from '../../Pages/Posts/Posts';
-import Home from '../../Pages/Home/Home';
 import './index.scss';
 import Users from '../../Pages/Users/Users';
 
 const NavBar = () => {
 	return (
 		<Router>
-			<div className="navigation">
-				<ul>
-					<li>
-						<NavLink to="/" exact activeClassName="active">Home</NavLink>
-					</li>
-					<li>
-						<NavLink to="/posts" activeClassName="active">Posts</NavLink>
-					</li>
-					<li>
-						<NavLink to="/users" activeClassName="active">Users</NavLink>
-					</li>
-				</ul>
-			</div>
+			<nav className="navbar navbar-expand navbar-light bg-light">
+				<div className="container-fluid">
+					<div className="collapse navbar-collapse" id="navbarSupportedContent">
+						<ul className="navbar-nav me-auto mb-2 mb-lg-0">
+							<li className="nav-item">
+								<NavLink to="/" className="nav-link" exact activeClassName="active">Posts</NavLink>
+							</li>
+							<li className="nav-item">
+							<NavLink to="/users" className="nav-link" activeClassName="active">Users</NavLink>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</nav>
 
 			<Switch>
 				<Route exact path="/">
-					<Home />
-				</Route>
-				<Route path="/posts">
 					<Posts />
 				</Route>
 				<Route path="/users">

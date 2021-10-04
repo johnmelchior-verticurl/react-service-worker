@@ -10,14 +10,16 @@ const Users = (props) => {
 	}, []);
 
 	return (
-		<div className="user-page common-page">
-			<h1>Users</h1>
-			<div className="flex-grid">
+		<div className="container overflow-hidden">
+			<h1 class="display-4">Users</h1>
+			<div className="row gy-4">
 				{users && users.map((user, index) => {
 					return (
-						<div className="col" key={index}>
-							<div className="title">{user?.name}</div>
-							<div className="content">{user?.username}</div>
+						<div className="col-4" key={index}>
+							<div className="p-3 border bg-light">
+								<div className="title">{user?.name}</div>
+								<div className="content">{user?.username}</div>
+							</div>
 						</div>
 					)
 				})}
