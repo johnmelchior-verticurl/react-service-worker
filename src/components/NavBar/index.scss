@@ -1,0 +1,19 @@
+.navigation {
+	margin: 0 auto;
+  & ul {
+    list-style: none;
+		display: flex;
+		& li {
+			padding: 10px;
+			& a{
+				text-decoration: none;
+				border-radius: 3px;
+			}
+		}
+  }
+}
+
+.active{
+	color: green;
+	font-weight: bold;
+ }
