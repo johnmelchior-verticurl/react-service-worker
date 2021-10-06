@@ -70,12 +70,17 @@ self.addEventListener('message', (event) => {
 });
 
 self.addEventListener('fetch', (event) => {
-  console.log("Event fetch", event);
-  event.respondWith(
-    caches.match(event.request).then( response => {
-      return response || fetch(event.request)
-    })
-  )
+  if (!navigator.onLine) {
+    event.respondWith(
+      caches.match(event.request).then(response => {
+        if(response){
+          return response 
+        }
+        let requestUrl = event.request.clone();
+        fetch(requestUrl);
+      })
+    )
+  }
 })
 
 // Any other custom service worker logic can go here.

@@ -6,7 +6,14 @@ const Users = (props) => {
 
 	useEffect(() => {
 		axios.get('https://jsonplaceholder.typicode.com/users')
-			.then((response) => setUsers(response.data));
+			.then((response) => {
+				setUsers(response.data);
+				localStorage.setItem("users", JSON.stringify( response.data));
+			})
+			.catch((err) => {
+				let data = localStorage.getItem("users");
+				setUsers(JSON.parse(data));
+			});;
 	}, []);
 
 	return (
@@ -15,7 +22,7 @@ const Users = (props) => {
 			<div className="row gy-4">
 				{users && users.map((user, index) => {
 					return (
-						<div className="col-4" key={index}>
+						<div className="col-md-6 col-sm-12 col-xl-4 col-xs-12" key={index}>
 							<div className="p-3 border bg-light">
 								<div className="title">{user?.name}</div>
 								<div className="content">{user?.username}</div>
