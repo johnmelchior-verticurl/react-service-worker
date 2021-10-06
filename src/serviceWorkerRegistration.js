@@ -90,13 +90,13 @@ function registerValidSW(swUrl, config) {
           }
         };
       };
-      // return registration.pushManager.getSubscription()
-      //   .then(function (subscription) {
-      //     return registration.pushManager.subscribe({
-      //       userVisibleOnly: true,
-      //       applicationServerKey: generateAppServerKey()
-      //     })
-      //   })
+      return registration.pushManager.getSubscription()
+        .then(function (subscription) {
+          return registration.pushManager.subscribe({
+            userVisibleOnly: true,
+            applicationServerKey: generateAppServerKey()
+          })
+        })
     })
     .catch((error) => {
       console.error('Error during service worker registration:', error);
@@ -147,7 +147,6 @@ export function unregister() {
 function urlBase64ToUint8Array(base64String) {
   const padding = '='.repeat((4 - base64String.length % 4) % 4);
   const base64 = (base64String + padding)
-    .replace(/\-/g, '+')
     .replace(/_/g, '/');
 
   const rawData = window.atob(base64);
