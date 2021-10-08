@@ -2,7 +2,6 @@ import React, { useEffect } from 'react';
 import './App.css';
 import NavBar from './components/NavBar/NavBar';
 import Footer from './components/Footer/Footer';
-import firebase from './firebase';
 import { getMessaging, getToken } from "firebase/messaging";
 
 
