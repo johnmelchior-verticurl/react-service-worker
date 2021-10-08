@@ -1,19 +1,23 @@
 .navigation {
-	margin: 0 auto;
+  margin: 0 auto;
   & ul {
     list-style: none;
-		display: flex;
-		& li {
-			padding: 10px;
-			& a{
-				text-decoration: none;
-				border-radius: 3px;
-			}
-		}
+    display: flex;
+    & li {
+      padding: 0 1.5rem;
+      &:hover {
+        background-color: darkgray;
+        border-radius: 3px;
+      }
+      & a {
+        text-decoration: none;
+        border-radius: 3px;
+      }
+    }
   }
 }
 
-.active{
-	color: green;
-	font-weight: bold;
- }
+.active {
+  color: green;
+  font-weight: bold;
+}

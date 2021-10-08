@@ -12,11 +12,11 @@ import Users from '../../Pages/Users/Users';
 const NavBar = () => {
 	return (
 		<Router>
-			<nav className="navbar navbar-expand navbar-light bg-light">
+			<nav className="navbar navbar-expand navbar-light bg-light navigation">
 				<div className="container-fluid">
 					<div className="collapse navbar-collapse" id="navbarSupportedContent">
 						<ul className="navbar-nav me-auto mb-2 mb-lg-0">
-							<li className="nav-item">
+							<li className="nav-item nav-list">
 								<NavLink to="/" className="nav-link" exact activeClassName="active">Posts</NavLink>
 							</li>
 							<li className="nav-item">

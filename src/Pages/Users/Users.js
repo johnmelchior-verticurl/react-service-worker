@@ -18,7 +18,7 @@ const Users = (props) => {
 
 	return (
 		<div className="container overflow-hidden">
-			<h1 class="display-4">Users</h1>
+			<h1 className="display-4">Users</h1>
 			<div className="row gy-4">
 				{users && users.map((user, index) => {
 					return (
